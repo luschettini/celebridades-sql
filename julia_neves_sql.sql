@@ -1,7 +1,6 @@
-CREATE DATABASE celebridades_db;
+CREATE DATABASE celebridades_teste3;
 
-CREATE TABLE celebridades(
-
+CREATE TABLE celebridades_teste3(
 id SERIAL PRIMARY KEY,
 nome VARCHAR(200),
 data_nascimento DATE,
@@ -9,16 +8,16 @@ nacionalidade VARCHAR(100),
 profissão VARCHAR(150),
 popularidade INT,
 falecido BOOLEAN
-)
+);
 
-INSERT INTO celebridades (nome, data_nascimento, nacionalidade, profissao, popularidade, falecido) VALUES
+INSERT INTO celebridades (nome, data_nascimento, nacionalidade, profissão, popularidade, falecido) VALUES
 ('Cândido Portinari', '1903-12-29', 'Brasileiro', 'Pintor', 92, 'TRUE'),
 ('Anita Malfatti', '1889-12-02', 'Brasileira', 'Pintora', 88, 'TRUE'),
 ('Di Cavalcanti', '1897-09-06', 'Brasileiro', 'Pintor', 90, 'TRUE'),
 ('Alfredo Volpi', '1896-04-14', 'Brasileiro', 'Pintor', 87, 'TRUE'),
 ('Ismael Nery', '1900-10-09', 'Brasileiro', 'Pintor', 85, 'TRUE'),
 ('Lasar Segall', '1891-07-21', 'Brasileiro', 'Pintor', 86, 'TRUE'),
-('Tarsila do Amaral', '1886-09-01', 'Brasileira', 'Pintora', 99, 'TRUE');
+('Tarsila do Amaral', '1886-09-01', 'Brasileira', 'Pintora', 99, 'TRUE'),
 ('Helio Oiticica', '1937-07-26', 'Brasileiro', 'Pintor', 83, 'TRUE'),
 ('Victor Meirelles', '1832-08-18', 'Brasileiro', 'Pintor', 82, 'TRUE'),
 ('Benedito Calixto', '1853-10-14', 'Brasileiro', 'Pintor', 78, 'TRUE'),
@@ -45,15 +44,15 @@ INSERT INTO celebridades (nome, data_nascimento, nacionalidade, profissao, popul
 ('Caravaggio', '1571-09-29', 'Italiano', 'Pintor', 99, 'TRUE'),
 ('Gustav Klimt', '1862-07-14', 'Austríaco', 'Pintor', 91, 'TRUE'),
 ('Andy Warhol', '1928-08-06', 'Americano', 'Pintor', 94, 'TRUE'),
-('Wassily Kandinsky', '1866-12-16', 'Russo-alemão', 'Pintor', 93, 'TRUE');
-('Jean-Michel Basquiat', '1960-12-22', 'Americano', 'Pintor', 60, 'TRUE'),
+('Wassily Kandinsky', '1866-12-16', 'Russo-alemão', 'Pintor', 93, 'TRUE'),
+('Jean Michel Basquiat', '1960-12-22', 'Americano', 'Pintor', 60, 'TRUE'),
 ('Amedeo Modigliani', '1884-07-12', 'Italiano', 'Pintor', 79, 'TRUE'),
 ('Artemisia Gentileschi', '1593-07-08', 'Italiana', 'Pintora', 93, 'TRUE');
 
 
 --!SELECT--
 SELECT * FROM celebridades WHERE data_nascimento > '1900-01-01';
-SELECT * FROM celebridades WHERE nacionalidade != 'Brasileiro' AND celebridades WHERE nacionalidade != 'Brasileira';
+SELECT * FROM celebridades WHERE nacionalidade != 'Brasileiro' OR celebridades WHERE nacionalidade != 'Brasileira';
 SELECT * FROM celebridades WHERE popularidade > 95 ORDER BY data_nascimento;
 SELECT * FROM celebridades WHERE nacionalidade = 'Francês';
 SELECT FROM celebridades WHERE popularidade = 100;
