@@ -145,3 +145,5 @@ FROM celebridades WHERE nome='Fernanda Montenegro'
 
 
 
+
+
