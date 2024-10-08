@@ -84,6 +84,15 @@ UPDATE celebridades SET popularidade = 0 WHERE nome = 'Chay Suede';
 UPDATE celebridades SET profissao = 'Jogador Corinthians' WHERE nome = 'Angelina Jolie';
 UPDATE celebridades SET popularidade = '1970-08-29' WHERE nome = 'Alessandra Negrini';
 
+-- DELETES --
+
+DELETE  FROM celebridades WHERE nacionalidade = "Ocidental";
+DELETE FROM celebridades WHERE popularidade < 20;
+DELETE FROM celebridades WHERE profissao = 'Jogador Corinthians'
+DELETE FROM celebridades WHERE id = 176;
+DELETE FROM celebridades WHERE profissao = 'Jogador Corinthians'
+
+
 
 
 
