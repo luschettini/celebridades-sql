@@ -1,4 +1,4 @@
-CREATE DATABASE celebridades_teste;
+CREATE DATABASE celebridades_db;
 
 CREATE TABLE celebridades(
 id SERIAL PRIMARY KEY,

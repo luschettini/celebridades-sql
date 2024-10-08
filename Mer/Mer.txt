@@ -1,17 +1,15 @@
 Mer ---------------
 
-Entidade: Usuário
-Atributo: Nome, CPF, Email, Pedido
-Chave Primária: Num. de Telefone
+--
+Entidade: Celebridades
 
-Entidade: Livro
-Atributo: Título, Autor,Categoria,Preço.
-Chave: Id/ Num do Livro/Code
+Atributos: nome, data de data_nascimento, nacionalidade, profissao, popularidade, falecido.
+Chave Primária: id 
 
-Entidade: Pedido
-Atributo:ID, entregaData, Pagamento
-Chave: ID
-
+---
 Relacionamentos:
-● Cada cliente realiza (0 ou mais [0,N]) pedidos
-● Cada pedido possui um ou mais livros (1,N)
+Não existe relacionamentos com outras entidades.
+
+---
+
+
