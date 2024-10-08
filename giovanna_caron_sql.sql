@@ -90,13 +90,50 @@ DELETE  FROM celebridades WHERE nacionalidade = "Ocidental";
 DELETE FROM celebridades WHERE popularidade < 20;
 DELETE FROM celebridades WHERE profissao = 'Jogador Corinthians'
 DELETE FROM celebridades WHERE id = 176;
-DELETE FROM celebridades WHERE data_nascimento < '1930-01-01';
+DELETE FROM celebridades WHERE data_nascimento < '1500-01-01';
 DELETE FROM celebridades WHERE profissao = 'Administrador contábil';
 DELETE FROM celebridades WHERE popularidade = 0;
 DELETE FROM celebridades WHERE nome LIKE 'y%';
 DELETE FROM celebridades WHERE nome = 'Vin Diesel';
 DELETE FROM celebridades WHERE data_nascimento = '1976-05-25';
 DELETE FROM celebridades WHERE nome LIKE 'w%';
+
+-- Funções --
+
+SELECT MIN(data_nascimento) FROM celebridades;
+
+SELECT AVG(popularidade) AS media_popularidade
+FROM celebridades;
+
+SELECT profissao, COUNT(*) AS profissoes_existentes FROM celebridades GROUP BY profissao;
+
+SELECT nacionalidade, COUNT(*) AS nacionalidades_existentes FROM celebridades GROUP BY celebridades;
+
+SELECT MAX(data_nascimento) FROM celebridades;
+
+SELECT SUM(data_nascimento) FROM celebridades;
+
+SELECT AVG(data_nascimento) AS media_nascimento
+FROM celebridades;
+
+SELECT nome, COUNT(*) AS nomes_existentes FROM celebridades GROUP BY nome;
+
+SELECT nome, profissao, CONCAT(nome, 'é um famoso com ', popularidade, ' de popularidade.')
+
+SELECT nome ,AGE (2024-10-08, 1929-10-16) AS idade 
+FROM celebridades WHERE nome='Fernanda Montenegro'
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
