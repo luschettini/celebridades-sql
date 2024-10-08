@@ -4,7 +4,7 @@ CREATE TABLE celebridades(
 
 id SERIAL PRIMARY KEY,
 nome VARCHAR(200),
-data_nascimento INT,
+data_nascimento DATE,
 nacionalidade VARCHAR(100),
 profissao VARCHAR(150),
 popularidade INT,
@@ -47,6 +47,20 @@ INSERT INTO celebridades (nome, data_nascimento, nacionalidade, profissao, popul
 ('Kurt Angle', '1968-12-09', 'Americano', 'Lutador', 72, FALSE),
 ('Neymar Jr.', '1992-02-05', 'Brasileiro', 'Jogador de Futebol', 95, FALSE),
 ('Rayssa Leal', '2008-01-04', 'Brasileiro', 'Skatista', 97, FALSE);
+
+SELECT * FROM celebridades WHERE nacionalidade = 'Brasileiro';
+SELECT * FROM celebridades WHERE nacionalidade = 'Brasileira';
+SELECT * FROM celebridades WHERE profissão = 'Jogador de Futebol';
+SELECT * FROM celebridades WHERE popularidade > 90;
+SELECT * FROM celebridades WHERE falecido = FALSE;
+SELECT * FROM celebridades WHERE falecido = TRUE;
+SELECT * FROM celebridades WHERE falecido = FALSE AND popularidade < 90;
+SELECT * FROM celebridades WHERE nome LIKE 'C%';
+SELECT COUNT(*) FROM celebridades WHERE profissao = 'Piloto de Fórmula 1';
+SELECT AVG(popularidade) AS media_popularidade FROM celebridades;
+
+
+
 
 
 
