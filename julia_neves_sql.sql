@@ -11,7 +11,7 @@ popularidade INT,
 falecido BOOLEAN
 )
 
-INSERT INTO pintores (nome, data_nascimento, nacionalidade, profissao, popularidade, falecido) VALUES
+INSERT INTO celebridades (nome, data_nascimento, nacionalidade, profissao, popularidade, falecido) VALUES
 ('Cândido Portinari', '1903-12-29', 'Brasileiro', 'Pintor', 92, 'TRUE'),
 ('Anita Malfatti', '1889-12-02', 'Brasileira', 'Pintora', 88, 'TRUE'),
 ('Di Cavalcanti', '1897-09-06', 'Brasileiro', 'Pintor', 90, 'TRUE'),
@@ -50,37 +50,49 @@ INSERT INTO pintores (nome, data_nascimento, nacionalidade, profissao, popularid
 ('Amedeo Modigliani', '1884-07-12', 'Italiano', 'Pintor', 79, 'TRUE'),
 ('Artemisia Gentileschi', '1593-07-08', 'Italiana', 'Pintora', 93, 'TRUE');
 
-<--!SELECT-->
-SELECT nome, data_nascimento FROM pintores WHERE data_nascimento > '1900-01-01';
-SELECT nome, nacionalidade FROM pintores WHERE nacionalidade != 'Brasileiro' AND pintores WHERE nacionalidade != 'Brasileira';
-SELECT nome, popularidade, data_nascimento FROM pintores WHERE popularidade > 95 ORDER BY data_nascimento;
-SELECT nome FROM pintores WHERE nacionalidade = 'Francês';
-SELECT nome, data_nascimento FROM pintores WHERE popularidade = 100;
-SELECT nome, popularidade FROM pintores ORDER BY popularidade DESC;
-SELECT nome FROM pintores WHERE profissao = 'Pintor' AND falecido = 'TRUE';
-SELECT nome FROM pintores WHERE data_nascimento < '1900-01-01' AND falecido = 'TRUE';
-SELECT nome, popularidade FROM pintores WHERE popularidade BETWEEN 90 AND 95;
-SELECT nome, popularidade FROM pintores WHERE popularidade BETWEEN 80 AND 90;
+
+--!SELECT--
+SELECT * FROM celebridades WHERE data_nascimento > '1900-01-01';
+SELECT * FROM celebridades WHERE nacionalidade != 'Brasileiro' AND celebridades WHERE nacionalidade != 'Brasileira';
+SELECT * FROM celebridades WHERE popularidade > 95 ORDER BY data_nascimento;
+SELECT * FROM celebridades WHERE nacionalidade = 'Francês';
+SELECT FROM celebridades WHERE popularidade = 100;
+SELECT * FROM celebridades ORDER BY popularidade DESC;
+SELECT * FROM celebridades WHERE profissao = 'Pintor' AND falecido = 'TRUE';
+SELECT * FROM celebridades WHERE data_nascimento < '1900-01-01' AND falecido = 'TRUE';
+SELECT * FROM celebridades WHERE popularidade BETWEEN 90 AND 95;
+SELECT * FROM celebridades WHERE popularidade BETWEEN 80 AND 90;
 
 
-<--!UPDATE-->
-UPDATE pintores SET popularidade = 90 WHERE nome = 'Anita Malfatti';
-UPDATE pintores SET falecido = 'FALSE' WHERE nome = 'Di Cavalcanti';
-UPDATE pintores SET profissao = 'Escultor' WHERE nome = 'Alfredo Volpi';
-UPDATE pintores SET popularidade = 93, falecido = 'FALSE' WHERE nome = 'Ismael Nery';
-UPDATE pintores SET profissao = 'Fotógrafo' WHERE nome = 'Lasar Segall';
-UPDATE pintores SET falecido = 'FALSE' WHERE nome = 'Tarsila do Amaral';
-UPDATE pintores SET popularidade = 85 WHERE nome = 'Helio Oiticica';
-UPDATE pintores SET profissao = 'Cartunista' WHERE nome = 'Victor Meirelles';
-UPDATE pintores SET nacionalidade = 'Argentino', popularidade = 90 WHERE nome = 'Cândido Portinari';
-UPDATE pintores SET nacionalidade = 'Uruguaio', popularidade = 90 WHERE nome = 'Di Cavalcanti';
-UPDATE pintores SET popularidade = 77 WHERE nome = 'Benedito Calixto';
-UPDATE pintores SET falecido = 'FALSE' WHERE nome = 'José Pancetti';
-UPDATE pintores SET profissao = 'Escultora e Pintora' WHERE nome = 'Djanira da Motta e Silva';
-UPDATE pintores SET nacionalidade = 'Venezuelano', popularidade = 92 WHERE nome = 'Helio Oiticica';
-UPDATE pintores SET popularidade = 91 WHERE nome = 'Tomie Ohtake';
-UPDATE pintores SET falecido = 'FALSE', popularidade = 84 WHERE nome = 'Manabu Mabe';
-UPDATE pintores SET profissao = 'Pintor e Inventor' WHERE nome = 'Leonardo da Vinci';
+--!UPDATE--
+UPDATE celebridades SET popularidade = 90 WHERE nome = 'Anita Malfatti';
+UPDATE celebridades SET falecido = 'FALSE' WHERE nome = 'Di Cavalcanti';
+UPDATE celebridades SET profissao = 'Escultor' WHERE nome = 'Alfredo Volpi';
+UPDATE celebridades SET popularidade = 93, falecido = 'FALSE' WHERE nome = 'Ismael Nery';
+UPDATE celebridades SET profissao = 'Fotógrafo' WHERE nome = 'Lasar Segall';
+UPDATE celebridades SET falecido = 'FALSE' WHERE nome = 'Tarsila do Amaral';
+UPDATE celebridades SET popularidade = 85 WHERE nome = 'Helio Oiticica';
+UPDATE celebridades SET profissao = 'Cartunista' WHERE nome = 'Victor Meirelles';
+UPDATE celebridades SET nacionalidade = 'Argentino', popularidade = 90 WHERE nome = 'Cândido Portinari';
+UPDATE celebridades SET nacionalidade = 'Uruguaio', popularidade = 90 WHERE nome = 'Di Cavalcanti';
+UPDATE celebridades SET popularidade = 77 WHERE nome = 'Benedito Calixto';
+UPDATE celebridades SET falecido = 'FALSE' WHERE nome = 'José Pancetti';
+UPDATE celebridades SET profissao = 'Escultora e Pintora' WHERE nome = 'Djanira da Motta e Silva';
+UPDATE celebridades SET nacionalidade = 'Venezuelano', popularidade = 92 WHERE nome = 'Helio Oiticica';
+UPDATE celebridades SET popularidade = 91 WHERE nome = 'Tomie Ohtake';
+UPDATE celebridades SET falecido = 'FALSE', popularidade = 84 WHERE nome = 'Manabu Mabe';
+UPDATE celebridades SET profissao = 'Pintor e Inventor' WHERE nome = 'Leonardo da Vinci';
 
 
+--!DELETE--
 
+DELETE FROM celebridades WHERE nome = 'Cândido Portinari';
+DELETE FROM celebridades WHERE nacionalidade = 'Italiano';
+DELETE FROM celebridades WHERE profissao = 'Pintor, Escultor, Inventor';
+DELETE FROM celebridades WHERE popularidade < 60;
+DELETE FROM celebridades WHERE nome = 'Ismael Nery' AND falecido = 'TRUE';
+DELETE FROM celebridades WHERE nome = 'Amadeo Modigliani' AND falecido = 'TRUE';
+DELETE FROM celebridades WHERE nacionalidade = 'Austríaco';
+DELETE FROM celebridades WHERE nome = 'Benedito Calixto' AND data_nascimento = '1853-10-14';
+DELETE FROM celebridades WHERE nacionalidade = 'Espanhol';
+DELETE FROM celebridades WHERE nacionalidade = 'Mexicano';
