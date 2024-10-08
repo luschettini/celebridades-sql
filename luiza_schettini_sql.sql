@@ -4,11 +4,11 @@ CREATE TABLE celebridades(
 
 id SERIAL PRIMARY KEY,
 nome VARCHAR(200),
-data_nascimento INT,
+data_nascimento DATE,
 nacionalidade VARCHAR(100),
 profissao VARCHAR(150),
 popularidade INT,
-óbito/Falecido BOOLEAN
+falecido BOOLEAN
 )
 
 INSERT INTO celebridades (nome, data_nascimento, nacionalidade, profissao, popularidade, falecido)
@@ -50,4 +50,9 @@ VALUES
 ('Tommy Hilfiger', '1951-03-24', 'Americano', 'Estilista', 85, 'false'),
 ('Diane von Fürstenberg', '1946-12-31', 'Belga', 'Estilista', 88, 'false'),
 ('Lily Aldridge', '1985-11-15', 'Americana', 'Modelo', 84, 'false');
+
+
+
+
+
 
