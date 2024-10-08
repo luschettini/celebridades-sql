@@ -12,7 +12,7 @@ falecido BOOLEAN
 )
 
 INSERT INTO celebridades (nome, data_nascimento, nacionalidade, profissao, popularidade, falecido) VALUES
-('Charles Leclerc', '1997-10-16', 'monegasco', 'Piloto de Fórmula 1', 90, FALSE),
+('Charles Leclerc', '1997-10-16', 'Monegasco', 'Piloto de Fórmula 1', 90, FALSE),
 ('Lionel Messi', '1987-06-24', 'Argentino', 'Jogador de Futebol', 98, FALSE),
 ('Michael Jordan', '1963-02-17', 'Americano', 'Jogador de Basquete', 90, FALSE),
 ('Pelé', '1940-10-23', 'Brasileiro', 'Jogador de Futebol', 100, TRUE)
@@ -56,8 +56,8 @@ SELECT * FROM celebridades WHERE falecido = FALSE;
 SELECT * FROM celebridades WHERE falecido = TRUE;
 SELECT * FROM celebridades WHERE falecido = FALSE AND popularidade < 90;
 SELECT * FROM celebridades WHERE nome LIKE 'C%';
-SELECT COUNT(*) FROM celebridades WHERE profissao = 'Piloto de Fórmula 1';
-SELECT AVG(popularidade) AS media_popularidade FROM celebridades;
+SELECT nome FROM celebridades WHERE popularidade = (SELECT MAX(popularidade) FROM celebridades);
+SELECT * FROM celebridades ORDER BY popularidade DESC;
 
 INSERT INTO celebridades (nome, data_nascimento, nacionalidade, profissao, popularidade, falecido) VALUES
 ('Lando Norris', '1999-11-13', 'Britânico', 'Piloto de Fórmula 1', 90, FALSE),
@@ -83,7 +83,7 @@ INSERT INTO celebridades (nome, data_nascimento, nacionalidade, profissao, popul
 ('Romário', '1966-01-29', 'Brasileiro', 'Jogador de Futebol', 95, FALSE),
 ('Niki Lauda', '1949-02-22', 'Austriaco', 'Piloto de F1', 92, TRUE),
 ('Beatriz Ferreira', '1992-12-09', 'Brasileira', 'Boxeadora', 90, FALSE),
-('Isaquias Queiroz', '1994','Brasileiro', 'Canoista', 87, FALSE),
+('Isaquias Queiroz', '1994-01-03','Brasileiro', 'Canoista', 87, FALSE),
 ('Júlia Soares', '2005-08-23', 'Brasileira', 'Ginasta', 90, FALSE),
 ('Diogo Soares','2002-04-12', 'Brasileiro', 'Ginasta', 88, FALSE),
 ('Beatriz Souza', '1998-05-20', 'Brasileira', 'Judoca', 93, FALSE),
@@ -95,6 +95,32 @@ INSERT INTO celebridades (nome, data_nascimento, nacionalidade, profissao, popul
 ('Hugo Calderano', '1996-06-22', 'Brasileiro', 'Mesa-tenista', 88, FALSE),
 ('Bruna Takahashi', '2000-07-19', 'Brasilira', 'Mesa-tenista', 88, FALSE),
 ('Marcus D´Almeida', '1998-01-30', 'Brasileiro', 'Arqueiro', 87, FALSE);
+
+UPDATE celebridades SET popularidade = popularidade + 10 WHERE popularidade < 80;
+UPDATE celebridades SET popularidade = 100 WHERE nome LIKE 'Neymar%';
+UPDATE celebridades SET falecido = TRUE WHERE id = 40;
+UPDATE celebridades SET nome = 'Fadinha' WHERE nome = 'Rayssa Leal';
+UPDATE celebridades SET profissao = 'Ex-piloto de F1' WHERE nome = 'Sebastian Vettel';
+UPDATE celebridades SET popularidade = 89 WHERE nacionalidade = 'Espanhol';
+UPDATE celebridades SET nome = 'Targaryen brasileira' WHERE data_nascimento = '1996-05-09' AND profissao = 'Surfista';
+UPDATE celebridades SET profissao = 'Namorado da Bruna' WHERE nome = 'Hugo Calderano';
+UPDATE celebridades SET profissao = 'Namorado da Taylor Swift' WHERE nome = 'Travis Kelce' AND profissao = 'Jogador de futebol Americano';
+UPDATE celebridades SET popularidade = 87 WHERE nome LIKE 'D%';
+UPDATE celebridades SET nacionalidade = 'Belga' WHERE nome = 'Lando Norris';
+UPDATE celebridades SET falecido = TRUE WHERE nome = 'Kurt Angle';
+UPDATE celebridades SET data_nascimento = '1970-06-14' WHERE profissao = 'Tenista' AND popularidade = 80;
+UPDATE celebridades SET profissao = 'Atleta olímpico' WHERE nome = 'Isaquias Queiroz';
+UPDATE celebridades SET popularidade = 100 WHERE profissao LIKE 'B%';
+UPDATE celebridades SET nome = 'André Mergen Taffarel' WHERE profissao = 'Jogador de futebol' AND data_nascimento = '1966-05-08';
+UPDATE celebridades SET nacionalidade = 'Alemão' WHERE nome LIKE 'Michael%';
+
+
+
+
+
+
+
+
 
 
 
