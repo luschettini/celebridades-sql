@@ -63,8 +63,6 @@ SELECT * FROM celebridades WHERE nome = 'G%';
 
 SELECT * FROM celebridades WHERE nacionalidade = 'Venezuelana';
 
-SELECT AVG(popularidade) AS media_popularidade FROM celebridades WHERE profissao = 'Modelo';
-
 SELECT * FROM celebridades ORDER BY popularidade DESC LIMIT 5;
 
 SELECT * FROM celebridades WHERE profissao = 'Estilista' ORDER BY data_nascimento ASC LIMIT 1;
@@ -130,9 +128,25 @@ DELETE FROM celebridades WHERE id = 167;
 DELETE FROM celebridades WHERE id = 200;
 
 
+SELECT AVG(popularidade) AS media_popularidade FROM celebridades WHERE profissao = 'Modelo';
 
+SELECT AVG(popularidade) AS media_popularidade FROM celebridades WHERE profissao = 'Estilista';
 
+SELECT AVG(popularidade) AS media_popularidade_americana FROM celebridades WHERE nacionalidade = 'Americana';
 
+SELECT SUM(popularidade) AS total_popularidade_falecidos FROM celebridades WHERE falecido = 'FALSE';
+
+SELECT SUM(popularidade) AS total_popularidade_britanico FROM celebridades WHERE nacionalidade = 'Britanico';
+
+SELECT COUNT(*) AS total_estilista FROM celebridades;
+
+SELECT COUNT(*) AS total_modelos FROM celebridades;
+
+SELECT nome, popularidade FROM celebridades ORDER BY popularidade DESC;
+
+SELECT COUNT(*) AS total_autor_popularidade_90 FROM celebridades WHERE popularidade <= 90;
+
+SELECT SUM(popularidade) AS total_popularidade FROM celebridades;
 
 
 
