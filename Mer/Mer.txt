@@ -1,1 +1,17 @@
 Mer ---------------
+
+Entidade: Usuário
+Atributo: Nome, CPF, Email, Pedido
+Chave Primária: Num. de Telefone
+
+Entidade: Livro
+Atributo: Título, Autor,Categoria,Preço.
+Chave: Id/ Num do Livro/Code
+
+Entidade: Pedido
+Atributo:ID, entregaData, Pagamento
+Chave: ID
+
+Relacionamentos:
+● Cada cliente realiza (0 ou mais [0,N]) pedidos
+● Cada pedido possui um ou mais livros (1,N)
