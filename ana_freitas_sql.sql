@@ -9,13 +9,13 @@ nacionalidade VARCHAR(100),
 profissao VARCHAR(150),
 popularidade INT,
 falecido BOOLEAN
-)
+);
 
 INSERT INTO celebridades (nome, data_nascimento, nacionalidade, profissao, popularidade, falecido) VALUES
 ('Charles Leclerc', '1997-10-16', 'Monegasco', 'Piloto de Fórmula 1', 90, FALSE),
 ('Lionel Messi', '1987-06-24', 'Argentino', 'Jogador de Futebol', 98, FALSE),
 ('Michael Jordan', '1963-02-17', 'Americano', 'Jogador de Basquete', 90, FALSE),
-('Pelé', '1940-10-23', 'Brasileiro', 'Jogador de Futebol', 100, TRUE)
+('Pelé', '1940-10-23', 'Brasileiro', 'Jogador de Futebol', 100, TRUE),
 ('Usain Bolt', '1986-08-21', 'Jamaicano', 'Velocista', 97, FALSE),
 ('Lewis Hamilton', '1985-01-07', 'Britânico', 'Piloto de Fórmula 1', 98, FALSE),
 ('LeBron James', '1984-12-30', 'Americano', 'Jogador de Basquete', 99, FALSE),
@@ -37,7 +37,7 @@ INSERT INTO celebridades (nome, data_nascimento, nacionalidade, profissao, popul
 ('Ayrton Senna', '1960-03-21', 'Brasileiro', 'Piloto de Fórmula 1', 100, TRUE),
 ('Gabby Douglas', '1995-12-31', 'Americana', 'Ginasta', 85, FALSE),
 ('Michelle Kwan', '1980-07-07', 'Americana', 'Patinadora Artística', 88, FALSE),
-('Renee Richards', '1934-08-25', 'Americana', 'Tenista', 80, TRUE);
+('Renee Richards', '1934-08-25', 'Americana', 'Tenista', 80, TRUE),
 ('Tina Maze', '1983-05-02', 'Eslovena', 'Esquiadora', 87, FALSE),
 ('Wayne Gretzky', '1961-01-26', 'Canadense', 'Jogador de Hóquei no Gelo', 90, FALSE),
 ('Katie ODonnell', '1988-02-12', 'Americana', 'Jogadora de Hóquei de Campo', 70, FALSE),
@@ -50,7 +50,7 @@ INSERT INTO celebridades (nome, data_nascimento, nacionalidade, profissao, popul
 
 SELECT * FROM celebridades WHERE nacionalidade = 'Brasileiro';
 SELECT * FROM celebridades WHERE nacionalidade = 'Brasileira';
-SELECT * FROM celebridades WHERE profissão = 'Jogador de Futebol';
+SELECT * FROM celebridades WHERE profissao = 'Jogador de Futebol';
 SELECT * FROM celebridades WHERE popularidade > 90;
 SELECT * FROM celebridades WHERE falecido = FALSE;
 SELECT * FROM celebridades WHERE falecido = TRUE;
@@ -108,22 +108,24 @@ UPDATE celebridades SET profissao = 'Namorado da Taylor Swift' WHERE nome = 'Tra
 UPDATE celebridades SET popularidade = 87 WHERE nome LIKE 'D%';
 UPDATE celebridades SET nacionalidade = 'Belga' WHERE nome = 'Lando Norris';
 UPDATE celebridades SET falecido = TRUE WHERE nome = 'Kurt Angle';
-UPDATE celebridades SET data_nascimento = '1970-06-14' WHERE profissao = 'Tenista' AND popularidade = 80;
+UPDATE celebridades SET data_nascimento = '1970-06-14' WHERE profissao = 'Tenista' AND nacionalidade = 'Alemã';
 UPDATE celebridades SET profissao = 'Atleta olímpico' WHERE nome = 'Isaquias Queiroz';
 UPDATE celebridades SET popularidade = 100 WHERE profissao LIKE 'B%';
-UPDATE celebridades SET nome = 'André Mergen Taffarel' WHERE profissao = 'Jogador de futebol' AND data_nascimento = '1966-05-08';
+UPDATE celebridades SET nome = 'André Mergen Taffarel' WHERE profissao = 'Jogador de Futebol' AND data_nascimento = '1966-05-08';
 UPDATE celebridades SET nacionalidade = 'Alemão' WHERE nome LIKE 'Michael%';
 
 DELETE FROM celebridades WHERE nome = 'Neymar Jr.';
 DELETE FROM celebridades WHERE popularidade = (SELECT MIN(popularidade) FROM celebridades);
 DELETE FROM celebridades WHERE popularidade  BETWEEN 60 and 70;
-DELETE FROM celebridades WHERE nome LIKE 'F%'; AND nacionalidade = 'Argentino';
+DELETE FROM celebridades WHERE nome LIKE 'F%' AND nacionalidade = 'Argentino';
 DELETE FROM celebridades WHERE data_nascimento = '1983-10-03' AND popularidade < 80;
 DELETE FROM celebridades WHERE profissao = 'Tenista';
 DELETE FROM celebridades WHERE nome LIKE 'Y%';
 DELETE FROM celebridades WHERE id = 99;
 DELETE FROM celebridades WHERE data_nascimento = '1940-10-23';
 DELETE FROM celebridades WHERE nome = 'Wayne Gretzky';
+
+
 
 
 
