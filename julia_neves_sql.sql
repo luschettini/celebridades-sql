@@ -117,6 +117,9 @@ SELECT UPPER(nome) AS nome_maiusculo FROM celebridades ;
 
 SELECT LOWER(nome) AS nome_minusculo FROM celebridades;
 
+SELECT CONCAT(nome, ' é um(a) ', famoso(a), ' com profissão de ', profissao) AS descricao_celebridades FROM celebridades;
+
+
 
 
 
