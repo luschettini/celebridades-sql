@@ -16,7 +16,7 @@ INSERT INTO celebridades (nome, data_nascimento, nacionalidade, profissao, popul
 ('Lionel Messi', '1987-06-24', 'Argentino', 'Jogador de Futebol', 98, FALSE),
 ('Michael Jordan', '1963-02-17', 'Americano', 'Jogador de Basquete', 90, FALSE),
 ('Pelé', '1940-10-23', 'Brasileiro', 'Jogador de Futebol', 100, TRUE)
-('Usain Bolt', '1986-08-21', 'Jamaicano', 'Atleta (Velocista)', 97, FALSE),
+('Usain Bolt', '1986-08-21', 'Jamaicano', 'Velocista', 97, FALSE),
 ('Lewis Hamilton', '1985-01-07', 'Britânico', 'Piloto de Fórmula 1', 98, FALSE),
 ('LeBron James', '1984-12-30', 'Americano', 'Jogador de Basquete', 99, FALSE),
 ('Tom Brady', '1977-08-03', 'Americano', 'Jogador de Futebol Americano', 95, FALSE),
@@ -58,6 +58,48 @@ SELECT * FROM celebridades WHERE falecido = FALSE AND popularidade < 90;
 SELECT * FROM celebridades WHERE nome LIKE 'C%';
 SELECT COUNT(*) FROM celebridades WHERE profissao = 'Piloto de Fórmula 1';
 SELECT AVG(popularidade) AS media_popularidade FROM celebridades;
+
+INSERT INTO celebridades (nome, data_nascimento, nacionalidade, profissao, popularidade, falecido) VALUES
+('Lando Norris', '1999-11-13', 'Britânico', 'Piloto de Fórmula 1', 90, FALSE),
+('Yuki Tsunoda', '2000-05-11', 'Japonês', 'Piloto de Fórmula 1', 80, FALSE),
+('Oscar Piastri', '2001-04-06', 'Australiano', 'Piloto de Fórmula 1', 94, FALSE),
+('Franco Colapinto', '2003-05-22', 'Argentino', 'Piloto de Fórmula 1', 83, FALSE),
+('Serena Williams', '1981-09-26', 'Americana', 'Tenista', 95, FALSE),
+('Diego Maradona', '1960-10-30', 'Argentino', 'Jogador de Futebol', 100, TRUE),
+('David Beckham', '1975-05-02', 'Britânico', 'Jogador de Futebol', 96, FALSE),
+('Mike Tyson', '1966-06-30', 'Americano', 'Boxeador', 96, FALSE),
+('Cafu', '1970-06-07', 'Brasileiro', 'Jogador de Futebol', 91, FALSE),
+('Ian Thorpe', '1982-10-13', 'Australiano', 'Nadador', 88, FALSE),
+('Valentino Rossi', '1979-02-16', 'Italiano', 'Piloto de MotoGP', 86, FALSE),
+('Felipe Massa', '1981-04-25', 'Brasileiro', 'Piloto de Fórmula 1', 83, FALSE),
+('Sebastian Vettel', '1987-07-03', 'Alemão', 'Piloto de Fórmula 1', 89, FALSE),
+('Carlos Sainz Jr.', '1994-09-01', 'Espanhol', 'Piloto de Fórmula 1', 73, FALSE),
+('Garrincha', '1933-10-28', 'Brasileiro', 'Jogador de Futebol', 93, TRUE),
+('Taffarel', '1966-05-08', 'Brasileiro', 'Jogador de Futebol', 76, FALSE),
+('Fred', '1983-10-03', 'Brasileiro', 'Jogador de Futebol', 73, FALSE),
+('Allyson Felix', '1985-11-18', 'Americana', 'Atletista', 92, FALSE),
+('Ryan Lochte', '1984-08-03', 'Americano', 'Nadador', 85, FALSE),
+('Jesse Owens', '1913-09-12', 'Americano', 'Atleta de Atletismo', 99, TRUE),
+('Romário', '1966-01-29', 'Brasileiro', 'Jogador de Futebol', 95, FALSE),
+('Niki Lauda', '1949-02-22', 'Austriaco', 'Piloto de F1', 92, TRUE),
+('Beatriz Ferreira', '1992-12-09', 'Brasileira', 'Boxeadora', 90, FALSE),
+('Isaquias Queiroz', '1994','Brasileiro', 'Canoista', 87, FALSE),
+('Júlia Soares', '2005-08-23', 'Brasileira', 'Ginasta', 90, FALSE),
+('Diogo Soares','2002-04-12', 'Brasileiro', 'Ginasta', 88, FALSE),
+('Beatriz Souza', '1998-05-20', 'Brasileira', 'Judoca', 93, FALSE),
+('William Lima', '2000-01-31', 'Brasileiro', 'Judoca', 92, FALSE),
+('Larissa Pimenta', ' 1999-03-01', 'Brasileira', 'Judoca', 89, FALSE),
+('Guilherme Costa', '1998-10-01', 'Brasileiro', 'Nadador', 83, FALSE),
+('Augusto Akio', '2000-12-12', 'Brasileiro', 'Skatista', 80, FALSE),
+('Tatiana Weston-Webb', '1996-05-09', 'Brasileira', 'Surfista', 80, FALSE),
+('Hugo Calderano', '1996-06-22', 'Brasileiro', 'Mesa-tenista', 88, FALSE),
+('Bruna Takahashi', '2000-07-19', 'Brasilira', 'Mesa-tenista', 88, FALSE),
+('Marcus D´Almeida', '1998-01-30', 'Brasileiro', 'Arqueiro', 87, FALSE);
+
+
+
+
+
 
 
 
