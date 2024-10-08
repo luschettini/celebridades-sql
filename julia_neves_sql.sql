@@ -96,3 +96,24 @@ DELETE FROM celebridades WHERE nacionalidade = 'Austríaco';
 DELETE FROM celebridades WHERE nome = 'Benedito Calixto' AND data_nascimento = '1853-10-14';
 DELETE FROM celebridades WHERE nacionalidade = 'Espanhol';
 DELETE FROM celebridades WHERE nacionalidade = 'Mexicano';
+
+
+--!Utilização de 10 funções do SQL--
+SELECT AVG(popularidade) AS media_popularidade_brasileiros FROM celebridades WHERE nacionalidade = 'Brasileiro';
+
+SELECT SUM(popularidade) AS total_popularidade_falecidos FROM celebridades WHERE falecido = 'TRUE';
+
+SELECT SUM(data_nascimento) FROM celebridades WHERE falecido = 'FALSE';
+
+SELECT nacionalidade, COUNT(*) AS total_celebridades FROM celebridades GROUP BY nacionalidade;
+
+SELECT COUNT(*) AS total_pintores_franceses FROM pintores WHERE nacionalidade = 'Francês';
+
+SELECT MAX(nacionalidade) FROM celebridades WHERE nacionalidade = "Americano";
+
+SELECT MIN(popularidade) AS menor_popularidade_espanhois FROM pintores WHERE nacionalidade = 'Espanhol';
+
+
+
+
+
