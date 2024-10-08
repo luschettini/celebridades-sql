@@ -109,4 +109,31 @@ UPDATE celebridades SET falecido = 'true' WHERE nome = 'Ralph Lauren';
 
 UPDATE celebridades SET nacionalidade = 'Jamaicana' WHERE nome = 'Naomi Campbell';
 
+DELETE FROM celebridades WHERE nome = 'Peggy Moffitt';
+
+DELETE FROM celebridades WHERE nacionalidade = 'Belga'; 
+
+DELETE FROM celebridades WHERE profissao popularidade < 83;
+
+DELETE FROM celebridades WHERE nacionalidade = 'Tunisiana'; 
+
+DELETE FROM celebridades WHERE YEAR(data_nascimento) < 1900
+
+DELETE FROM celebridades WHERE nome = 'Lily Aldridge';
+
+DELETE FROM celebridades WHERE nome = 'Zac Posen' AND data_nascimento = '1980-10-24';
+
+DELETE FROM celebridades WHERE nacionalidade = 'Venezuelana'; 
+
+DELETE FROM celebridades WHERE id = 167;
+
+DELETE FROM celebridades WHERE id = 200;
+
+
+
+
+
+
+
+
 
