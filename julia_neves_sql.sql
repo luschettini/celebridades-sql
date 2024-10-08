@@ -46,6 +46,9 @@ INSERT INTO pintores (nome, data_nascimento, nacionalidade, profissao, popularid
 ('Gustav Klimt', '1862-07-14', 'Austríaco', 'Pintor', 91, 'TRUE'),
 ('Andy Warhol', '1928-08-06', 'Americano', 'Pintor', 94, 'TRUE'),
 ('Wassily Kandinsky', '1866-12-16', 'Russo-alemão', 'Pintor', 93, 'TRUE');
+('Jean-Michel Basquiat', '1960-12-22', 'Americano', 'Pintor', 60, 'TRUE'),
+('Amedeo Modigliani', '1884-07-12', 'Italiano', 'Pintor', 79, 'TRUE'),
+('Artemisia Gentileschi', '1593-07-08', 'Italiana', 'Pintora', 93, 'TRUE');
 
 
 SELECT nome, data_nascimento FROM pintores WHERE data_nascimento > '1900-01-01';
@@ -67,6 +70,26 @@ SELECT nome FROM pintores WHERE data_nascimento < '1900-01-01' AND falecido = 'T
 SELECT nome, popularidade FROM pintores WHERE popularidade BETWEEN 90 AND 95;
 
 SELECT nome, popularidade FROM pintores WHERE popularidade BETWEEN 80 AND 90;
+
+
+
+UPDATE pintores SET popularidade = 90 WHERE nome = 'Anita Malfatti';
+UPDATE pintores SET falecido = 'FALSE' WHERE nome = 'Di Cavalcanti';
+UPDATE pintores SET profissao = 'Escultor' WHERE nome = 'Alfredo Volpi';
+UPDATE pintores SET popularidade = 93, falecido = 'FALSE' WHERE nome = 'Ismael Nery';
+UPDATE pintores SET profissao = 'Fotógrafo' WHERE nome = 'Lasar Segall';
+UPDATE pintores SET falecido = 'FALSE' WHERE nome = 'Tarsila do Amaral';
+UPDATE pintores SET popularidade = 85 WHERE nome = 'Helio Oiticica';
+UPDATE pintores SET profissao = 'Cartunista' WHERE nome = 'Victor Meirelles';
+UPDATE pintores SET nacionalidade = 'Argentino', popularidade = 90 WHERE nome = 'Cândido Portinari';
+UPDATE pintores SET nacionalidade = 'Uruguaio', popularidade = 90 WHERE nome = 'Di Cavalcanti';
+UPDATE pintores SET popularidade = 77 WHERE nome = 'Benedito Calixto';
+UPDATE pintores SET falecido = 'FALSE' WHERE nome = 'José Pancetti';
+UPDATE pintores SET profissao = 'Escultora e Pintora' WHERE nome = 'Djanira da Motta e Silva';
+UPDATE pintores SET nacionalidade = 'Venezuelano', popularidade = 92 WHERE nome = 'Helio Oiticica';
+UPDATE pintores SET popularidade = 91 WHERE nome = 'Tomie Ohtake';
+UPDATE pintores SET falecido = 'FALSE', popularidade = 84 WHERE nome = 'Manabu Mabe';
+UPDATE pintores SET profissao = 'Pintor e Inventor' WHERE nome = 'Leonardo da Vinci';
 
 
 
