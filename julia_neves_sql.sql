@@ -113,6 +113,8 @@ SELECT MAX(nacionalidade) FROM celebridades WHERE nacionalidade = "Americano";
 
 SELECT MIN(popularidade) AS menor_popularidade_espanhois FROM pintores WHERE nacionalidade = 'Espanhol';
 
+SELECT UPPER(nome) AS nome_maiusculo FROM celebridades ;
+
 
 
 
