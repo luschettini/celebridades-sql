@@ -4,7 +4,7 @@ CREATE TABLE celebridades(
 
 id SERIAL PRIMARY KEY,
 nome VARCHAR(200),
-data_nascimento INT,
+data_nascimento DATE,
 nacionalidade VARCHAR(100),
 profissao VARCHAR(150),
 popularidade INT,
@@ -27,12 +27,12 @@ INSERT INTO celebridades (nome, data_nascimento, nacionalidade, profissao, popul
 ('Rebeca Andrade', '1999-05-08', 'Brasileira', 'Ginasta', 95, FALSE),
 ('Marta Vieira da Silva', '1986-02-19', 'Brasileira', 'Jogadora de Futebol', 93, FALSE),
 ('Gabriel Medina', '1993-12-22', 'Brasileiro', 'Surfista', 85, FALSE),
-('Shaquille O’Neal', '1972-03-06', 'Americano', 'Jogador de Basquete', 95, FALSE),
+('Shaquille ONeal', '1972-03-06', 'Americano', 'Jogador de Basquete', 95, FALSE),
 ('Ronaldinho Gaúcho', '1980-03-21', 'Brasileiro', 'Jogador de Futebol', 94, FALSE),
 ('Michael Phelps', '1985-06-30', 'Americano', 'Nadador', 98, FALSE),
 ('Oscar Schmidt', '1958-02-16', 'Brasileiro', 'Jogador de Basquete', 92, FALSE),
 ('Fernando Alonso', '1981-07-29', 'Espanhol', 'Piloto de Fórmula 1', 94, FALSE),
-('Kimi Räikkönen', '1979-10-17', 'Finlandês', 'Piloto de Fórmula 1', 89, FALSE),
+('Kimi Raikkonen', '1979-10-17', 'Finlandês', 'Piloto de Fórmula 1', 89, FALSE),
 ('Travis Kelce', '1989-10-05', 'Americano', 'Jogador de futebol Americano', 93, FALSE),
 ('Ayrton Senna', '1960-03-21', 'Brasileiro', 'Piloto de Fórmula 1', 100, TRUE),
 ('Gabby Douglas', '1995-12-31', 'Americana', 'Ginasta', 85, FALSE),
@@ -47,6 +47,20 @@ INSERT INTO celebridades (nome, data_nascimento, nacionalidade, profissao, popul
 ('Kurt Angle', '1968-12-09', 'Americano', 'Lutador', 72, FALSE),
 ('Neymar Jr.', '1992-02-05', 'Brasileiro', 'Jogador de Futebol', 95, FALSE),
 ('Rayssa Leal', '2008-01-04', 'Brasileiro', 'Skatista', 97, FALSE);
+
+SELECT * FROM celebridades WHERE nacionalidade = 'Brasileiro';
+SELECT * FROM celebridades WHERE nacionalidade = 'Brasileira';
+SELECT * FROM celebridades WHERE profissão = 'Jogador de Futebol';
+SELECT * FROM celebridades WHERE popularidade > 90;
+SELECT * FROM celebridades WHERE falecido = FALSE;
+SELECT * FROM celebridades WHERE falecido = TRUE;
+SELECT * FROM celebridades WHERE falecido = FALSE AND popularidade < 90;
+SELECT * FROM celebridades WHERE nome LIKE 'C%';
+SELECT COUNT(*) FROM celebridades WHERE profissao = 'Piloto de Fórmula 1';
+SELECT AVG(popularidade) AS media_popularidade FROM celebridades;
+
+
+
 
 
 
