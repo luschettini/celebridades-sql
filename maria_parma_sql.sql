@@ -167,23 +167,14 @@ DELETE FROM celebridades WHERE profissao != 'Produtor Musical';
 
 FUNÇÕES SQL
 
-//Somar a popularidade de todas as celebridades
-SELECT SUM(popularidade) AS total_popularidade FROM celebridades;
-
 //Calcular a popularidade média das celebridades
 SELECT AVG(popularidade) AS media_popularidade FROM celebridades;
 
 //Contar o número total de celebridades
 SELECT COUNT(*) AS total_celebridades FROM celebridades;
 
-//Encontrar a popularidade máxima
-SELECT MAX(popularidade) AS popularidade_maxima FROM celebridades;
-
-//Encontrar a popularidade mínima
-SELECT MIN(popularidade) AS popularidade_minima FROM celebridades;
-
-//Contar quantas celebridades são brasileiras
-SELECT COUNT(*) AS total_brasileiras FROM celebridades WHERE nacionalidade = 'Brasileira';
+//Contar quantas celebridades são canadenses
+SELECT COUNT(*) AS total_brasileiras FROM celebridades WHERE nacionalidade = 'Canadense';
 
 //Agrupar celebridades por profissão e contar quantas em cada grupo
 SELECT profissao, COUNT(*) AS total_profissao FROM celebridades GROUP BY profissao;
@@ -196,3 +187,12 @@ SELECT MAX(data_nascimento) AS data_recente, MIN(data_nascimento) AS data_antiga
 
 //Contar quantas celebridades têm popularidade acima de 95
 SELECT COUNT(*) AS total_popularidade_alta FROM celebridades WHERE popularidade > 95;
+
+//Contar o número total de cantoras
+SELECT COUNT(*) AS total_cantoras FROM celebridades WHERE profissao = 'Cantora';
+
+//Calcular a média de popularidade das celebridades cujo nome começa com 'A'
+SELECT AVG(popularidade) AS media_popularidade_a FROM celebridades WHERE nome LIKE 'A%';
+
+//Contar o número de celebridades nascidas em fevereiro
+SELECT COUNT(*) AS total_fevereiro FROM celebridades WHERE data_nascimento LIKE '____-02-%';
