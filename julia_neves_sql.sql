@@ -4,11 +4,11 @@ CREATE TABLE celebridades(
 
 id SERIAL PRIMARY KEY,
 nome VARCHAR(200),
-data_nascimento INT,
+data_nascimento DATE,
 nacionalidade VARCHAR(100),
 profissão VARCHAR(150),
 popularidade INT,
-óbito/Falecido BOOLEAN
+falecido BOOLEAN
 )
 
 INSERT INTO pintores (nome, data_nascimento, nacionalidade, profissao, popularidade, falecido) VALUES
