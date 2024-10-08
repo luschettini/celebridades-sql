@@ -115,6 +115,7 @@ SELECT MIN(popularidade) AS menor_popularidade_espanhois FROM pintores WHERE nac
 
 SELECT UPPER(nome) AS nome_maiusculo FROM celebridades ;
 
+SELECT LOWER(nome) AS nome_minusculo FROM celebridades;
 
 
 
