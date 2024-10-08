@@ -59,7 +59,7 @@ SELECT * FROM celebridades WHERE data_nascimento < "1900-01-01";
 
 SELECT * FROM autores WHERE nacionalidade != 'Brasileiro' AND autores WHERE nacionalidade != 'Brasileira';
 
- SELECT * FROM celebridades WHERE popularidade >= 95 AND falecido = "False";
+SELECT * FROM celebridades WHERE popularidade >= 95 AND falecido = "False";
 
 SELECT * FROM celebridades ORDER BY popularidade ASC LIMIT 5;
 
@@ -86,7 +86,16 @@ UPDATE celebridades SET profissao = 'Poeta' WHERE nome = 'Franz Kafka';
 UPDATE celebridades SET nacionalidade = 'Argentina' WHERE nome = 'Isabel Allende';
 
 
-
+DELETE FROM celebridades WHERE nome = 'Margaret Atwood';
+DELETE FROM celebridades WHERE data_nascimento = '1927-03-06';
+DELETE FROM celebridades WHERE popularidade < 
+DELETE FROM celebridades
+DELETE FROM celebridades
+DELETE FROM celebridades
+DELETE FROM celebridades
+DELETE FROM celebridades
+DELETE FROM celebridades
+DELETE FROM celebridades
 
 
 
