@@ -4,7 +4,7 @@ CREATE TABLE celebridades(
 
 id SERIAL PRIMARY KEY,
 nome VARCHAR(200),
-data_nascimento INT,
+data_nascimento DATE,
 nacionalidade VARCHAR(100),
 profissao VARCHAR(150),
 popularidade INT,
