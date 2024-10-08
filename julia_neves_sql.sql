@@ -50,29 +50,20 @@ INSERT INTO pintores (nome, data_nascimento, nacionalidade, profissao, popularid
 ('Amedeo Modigliani', '1884-07-12', 'Italiano', 'Pintor', 79, 'TRUE'),
 ('Artemisia Gentileschi', '1593-07-08', 'Italiana', 'Pintora', 93, 'TRUE');
 
-
+<--!SELECT-->
 SELECT nome, data_nascimento FROM pintores WHERE data_nascimento > '1900-01-01';
-
 SELECT nome, nacionalidade FROM pintores WHERE nacionalidade != 'Brasileiro' AND pintores WHERE nacionalidade != 'Brasileira';
-
 SELECT nome, popularidade, data_nascimento FROM pintores WHERE popularidade > 95 ORDER BY data_nascimento;
-
 SELECT nome FROM pintores WHERE nacionalidade = 'Francês';
-
 SELECT nome, data_nascimento FROM pintores WHERE popularidade = 100;
-
 SELECT nome, popularidade FROM pintores ORDER BY popularidade DESC;
-
 SELECT nome FROM pintores WHERE profissao = 'Pintor' AND falecido = 'TRUE';
-
 SELECT nome FROM pintores WHERE data_nascimento < '1900-01-01' AND falecido = 'TRUE';
-
 SELECT nome, popularidade FROM pintores WHERE popularidade BETWEEN 90 AND 95;
-
 SELECT nome, popularidade FROM pintores WHERE popularidade BETWEEN 80 AND 90;
 
 
-
+<--!UPDATE-->
 UPDATE pintores SET popularidade = 90 WHERE nome = 'Anita Malfatti';
 UPDATE pintores SET falecido = 'FALSE' WHERE nome = 'Di Cavalcanti';
 UPDATE pintores SET profissao = 'Escultor' WHERE nome = 'Alfredo Volpi';
