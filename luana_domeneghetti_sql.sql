@@ -59,7 +59,7 @@ SELECT * FROM celebridades WHERE data_nascimento < "1900-01-01";
 
 SELECT * FROM celebridades WHERE nacionalidade = "Brasileiro" AND popularidade < 90;
 
- SELECT * FROM celebridades WHERE popularidade >= 95 AND falecido = "False";
+SELECT * FROM celebridades WHERE popularidade >= 95 AND falecido = "False";
 
 SELECT * FROM celebridades ORDER BY popularidade ASC LIMIT 5;
 
