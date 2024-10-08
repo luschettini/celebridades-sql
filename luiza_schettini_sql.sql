@@ -51,19 +51,3 @@ VALUES
 ('Diane von Fürstenberg', '1946-12-31', 'Belga', 'Estilista', 88, 'false'),
 ('Lily Aldridge', '1985-11-15', 'Americana', 'Modelo', 84, 'false');
 
-SELECT * FROM celebridades WHERE falecido = 'false';
-SELECT * FROM celebridades WHERE profissao = 'Estilista' < '1950-01-01';
-SELECT * FROM celebridades WHERE profissao = 'Modelo' > 90;
-SELECT * FROM celebridades WHERE profissao = 'Modelo' AND nacionalidade = 'Americana';
-SELECT * FROM celebridades WHERE nome = 'G%';
-SELECT * FROM celebridades WHERE nacionalidade = 'Venezuelana';
-SELECT AVG(popularidade) AS media_popularidade FROM celebridades WHERE profissao = 'Modelo';
-SELECT * FROM celebridades ORDER BY popularidade DESC LIMIT 5;
-SELECT * FROM celebridades WHERE profissao = 'Estilista' ORDER BY data_nascimento ASC LIMIT 1;
-SELECT * FROM celebridades WHERE data_nascimento = (SELECT MIN(data_nascimento) FROM celebridades);
-SELECT * FROM celebridades WHERE data_nascimento = (SELECT MAX(data_nascimento) FROM celebridades);
-SELECT * FROM celebridades WHERE (profissao = 'Estilista';OR profissao = 'Modelo') AND nacionalidade = 'Francesa';
-SELECT * FROM celebridades WHERE profissao;
-SELECT * FROM celebridades WHERE profissao = 'Modelo' AND falecido = 'true';
-
-//fiz 12
