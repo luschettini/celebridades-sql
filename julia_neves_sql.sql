@@ -52,7 +52,7 @@ INSERT INTO celebridades (nome, data_nascimento, nacionalidade, profissão, popu
 
 --!SELECT--
 SELECT * FROM celebridades WHERE data_nascimento > '1900-01-01';
-SELECT * FROM celebridades WHERE nacionalidade != 'Brasileiro' OR celebridades WHERE nacionalidade != 'Brasileira';
+SELECT * FROM celebridades WHERE nacionalidade = 'Americano' OR celebridades WHERE nacionalidade = 'Americana';
 SELECT * FROM celebridades WHERE popularidade > 95 ORDER BY data_nascimento;
 SELECT * FROM celebridades WHERE nacionalidade = 'Francês';
 SELECT FROM celebridades WHERE popularidade = 100;
