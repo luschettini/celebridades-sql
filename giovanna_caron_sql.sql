@@ -25,7 +25,7 @@ VALUES
 ('Will Smith', '1968-09-25', 'Americano', 'Ator', 90, FALSE ),
 ('Jackie Chan',  '1954-04-07', 'Chinês', 'Ator', 90, FALSE ),
 ('Johnny Depp', '1963-06-09', 'Americano', 'Ator', 93, FALSE),
-('Chloë Grace Moretz', '1997-02-10', 'Americana', 'Atriz', 80, FALSE ),
+('Chloe Grace Moretz', '1997-02-10', 'Americana', 'Atriz', 80, FALSE ),
 ('Robert Downey Jr','1965-04-04', 'Americano', 'Ator', 80, FALSE ),
 ('Chris Evans', '1981-06-13', 'Americano', 'Ator', 96, FALSE ),
 ('Margot Robbie', '1990-07-02', 'Australiana', 'Atriz', 88, FALSE ),
@@ -90,7 +90,15 @@ DELETE  FROM celebridades WHERE nacionalidade = "Ocidental";
 DELETE FROM celebridades WHERE popularidade < 20;
 DELETE FROM celebridades WHERE profissao = 'Jogador Corinthians'
 DELETE FROM celebridades WHERE id = 176;
-DELETE FROM celebridades WHERE profissao = 'Jogador Corinthians'
+DELETE FROM celebridades WHERE data_nascimento < '1930-01-01';
+DELETE FROM celebridades WHERE profissao = 'Administrador contábil';
+DELETE FROM celebridades WHERE popularidade = 0;
+DELETE FROM celebridades WHERE nome LIKE 'y%';
+DELETE FROM celebridades WHERE nome = 'Vin Diesel';
+DELETE FROM celebridades WHERE data_nascimento = '1976-05-25';
+DELETE FROM celebridades WHERE nome LIKE 'w%';
+
+
 
 
 
