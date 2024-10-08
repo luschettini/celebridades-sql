@@ -8,7 +8,7 @@ data_nascimento DATE,
 nacionalidade VARCHAR(100),
 profissao VARCHAR(150),
 popularidade INT,
-óbito/Falecido BOOLEAN
+falecido BOOLEAN
 ); 
 
 INSERT
@@ -51,7 +51,7 @@ INSERT INTO celebridades (nome, data_nascimento, nacionalidade, profissao, popul
 SELECT
 
 //Obter a lista de nomes e popularidade de cantoras com popularidade maior que 90
-SELECT * nome, popularidade FROM celebridades WHERE profissao = 'Cantora' AND popularidade > 90;
+SELECT * FROM celebridades WHERE profissao = 'Cantora' AND popularidade > 90; 
 
 //Listar todas as celebridades ordenadas pela data de nascimento mais recente
 SELECT * FROM celebridades ORDER BY data_nascimento DESC;
@@ -60,13 +60,13 @@ SELECT * FROM celebridades ORDER BY data_nascimento DESC;
 SELECT * FROM celebridades WHERE data_nascimento < '1950-01-01';
 
 //Listar as 5 celebridades mais populares
-SELECT * nome, popularidade FROM celebridades ORDER BY popularidade DESC LIMIT 5;
+SELECT * FROM celebridades ORDER BY popularidade DESC LIMIT 5;
 
 //Encontrar todas as celebridades brasileiras e listar por ordem alfabética
-SELECT * nome, popularidade FROM celebridades ORDER BY popularidade DESC LIMIT 5;
+SELECT * FROM celebridades ORDER BY popularidade DESC LIMIT 5;
 
 //Encontrar todas as celebridades brasileiras e listar por ordem alfabética
-SELECT * nome FROM celebridades WHERE nacionalidade = 'Brasileiro' ORDER BY nome;
+SELECT * FROM celebridades WHERE nacionalidade = 'Brasileiro' ORDER BY nome;
 
 //Selecionar as celebridades cujo nome começa com a letra "S"
 SELECT * FROM celebridades WHERE nome LIKE 'S%';
@@ -75,7 +75,7 @@ SELECT * FROM celebridades WHERE nome LIKE 'S%';
 SELECT * FROM celebridades WHERE nacionalidade != 'Americana';
 
 //Obter a popularidade e a data de nascimento das celebridades que ainda estão vivas
-SELECT nome, popularidade, data_nascimento FROM celebridades WHERE falecido = FALSE;
+SELECT * FROM celebridades WHERE falecido = FALSE;
 
 //Listar todas as celebridades com popularidade entre 90 e 95
 SELECT * FROM celebridades WHERE popularidade BETWEEN 90 AND 95;
@@ -145,7 +145,7 @@ DELETE FROM celebridades WHERE nacionalidade = 'Japonesa';
 DELETE FROM celebridades WHERE falecido = TRUE;
 
 //Deletar celebridades que tem o nome Adele
-DELETE FROM celebridades WHERE nome 'Adele';
+DELETE FROM celebridades WHERE nome = 'Adele';
 
 //Deletar celebridades cujo nome começa com 'J'
 DELETE FROM celebridades WHERE nome LIKE 'J%';
@@ -159,11 +159,11 @@ DELETE FROM celebridades WHERE id = 1;
 //Deletar celebridades com popularidade igual a 95
 DELETE FROM celebridades WHERE popularidade = 95;
 
-//Deletar celebridades nascidas em dezembro
-DELETE FROM celebridades WHERE data_nascimento LIKE '____-12-%';
+//Deletar celebridades Jamaicano
+DELETE FROM celebridades WHERE nacionalidade = 'Jamaicano';
 
-//Deletar celebridades que não são produtores musicais
-DELETE FROM celebridades WHERE profissao != 'Produtor Musical';
+//Deletar celebridades que tem o nome Shawn Mendes
+DELETE FROM celebridades WHERE nome = 'Shawn Mendes';
 
 FUNÇÕES SQL
 
