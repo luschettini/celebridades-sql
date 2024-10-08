@@ -53,15 +53,40 @@ VALUES
 --- SELECT ----
 
 SELECT * FROM celebridades  WHERE nome= 'Taylor Lautner';
-SELECT * FROM celebridades  WHERE nacionalidade='Brasileiro' AND nacionalidade= 'Brasileira' ORDER BY data_nascimento;
-SELECT * FROM celebridades  WHERE falecido=TRUE;
-SELECT * FROM celebridades  WHERE profissao= 'Ator' AND profissao= 'Atriz';
+SELECT * FROM celebridades  WHERE nacionalidade ='Brasileiro' AND nacionalidade= 'Brasileira' ORDER BY data_nascimento;
+SELECT * FROM celebridades  WHERE falecido= TRUE;
+SELECT * FROM celebridades  WHERE profissao = 'Ator' AND profissao = 'Atriz';
 SELECT * FROM celebridades  WHERE nome LIKE 'j%';
 SELECT * FROM celebridades  WHERE popularidade BETWEEN 95 AND 100;
 SELECT * FROM celebridades  ORDER BY avaliacao DESC;
 SELECT * FROM celebridades  ORDER BY data_nascimento
-SELECT * FROM celebridades  WHERE
-SELECT * FROM celebridades  WHERE
+SELECT * FROM celebridades  WHERE falecido = FALSE;
+SELECT * FROM celebridades  WHERE popularidade < 70;
+
+--- UPDATE ----
+
+UPDATE celebridades SET popularidade = 0 WHERE nome = 'Chay Suede';
+UPDATE celebridades SET nome = 'Alessandra Negrini' WHERE nome = 'Giovanna Antonelli';
+UPDATE celebridades SET data_nascimento = '1992-04-09' data_nascimento = '1990-04-09';
+UPDATE celebridades SET falecido = FALSE WHERE nome = 'Paulo Gustavo';
+UPDATE celebridades SET popularidade =  popularidade +10 WHERE nome = 'Dakota Jhonson';
+UPDATE celebridades SET falecido = TRUE nome = 'Ronaldinho Gaucho' WHERE id= 34;
+UPDATE celebridades SET falecido = TRUE WHERE data_nascimento < '1930-01-01';
+UPDATE celebridades SET popularidade = 100 WHERE nome LIKE 'g%';
+UPDATE celebridades SET nacionalidade = 'Ocidental' WHERE nacionalidade = 'Chinês';
+UPDATE celebridades SET popularidade = 0 WHERE nome = 'Lily Collins';
+UPDATE celebridades SET profissao = 'Reserva Vasco' WHERE nome = 'Chris Evans';
+UPDATE celebridades SET profissao = 'Administrador contábil' WHERE nome = 'Margot Robbie';
+UPDATE celebridades SET data_nascimento = '1990-04-09' WHERE nome = 'Emma Watson';
+UPDATE celebridades SET data_nascimento = '1990-04-08' WHERE data_nascimento = '1990-04-09';
+UPDATE celebridades SET popularidade = popularidade + 5 WHERE popularidade = 95;
+UPDATE celebridades SET popularidade = 0 WHERE nome = 'Chay Suede';
+UPDATE celebridades SET profissao = 'Jogador Corinthians' WHERE nome = 'Angelina Jolie';
+UPDATE celebridades SET popularidade = '1970-08-29' WHERE nome = 'Alessandra Negrini';
+
+
+
+
 
 
 
