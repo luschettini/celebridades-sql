@@ -88,14 +88,14 @@ UPDATE celebridades SET nacionalidade = 'Argentina' WHERE nome = 'Isabel Allende
 
 DELETE FROM celebridades WHERE nome = 'Margaret Atwood';
 DELETE FROM celebridades WHERE data_nascimento = '1927-03-06';
-DELETE FROM celebridades WHERE popularidade < 
-DELETE FROM celebridades
-DELETE FROM celebridades
-DELETE FROM celebridades
-DELETE FROM celebridades
-DELETE FROM celebridades
-DELETE FROM celebridades
-DELETE FROM celebridades
+DELETE FROM celebridades WHERE popularidade < 15;
+DELETE FROM celebridades WHERE nacionalidade = 'Irlandês'
+DELETE FROM celebridades WHERE id = 19;
+DELETE FROM celebridades WHERE profissao != 'Jornalista';
+DELETE FROM celebridades WHERE nome LIKE 'K%';
+DELETE FROM celebridades WHERE data_nascimento = '1973-10-12';
+DELETE FROM celebridades WHERE YEAR(data_nascimento) < 1850;
+DELETE FROM celebridades WHERE nome = 'Salman Rushdie';
 
 
 
