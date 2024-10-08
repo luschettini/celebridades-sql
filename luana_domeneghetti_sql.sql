@@ -99,7 +99,7 @@ DELETE FROM celebridades WHERE nome = 'Salman Rushdie';
 
 SELECT AVG(popularidade) AS media_popularidade_falecidos FROM celebridades WHERE falecido = 'True';
 SELECT nacionalidade, COUNT(*) AS total_falecidos FROM celebridades WHERE falecido = 'True'  GROUP BY nacionalidade  HAVING total_falecidos >= 3;
-SELECT COUNT(*) AS autores_acima_95 FROM celebridades WHERE popularidade > 95;
+SELECT COUNT(*) AS autor_acima_95 FROM celebridades WHERE popularidade > 95;
 SELECT nome, MIN(popularidade) AS menor_popularidade FROM celebridades;
 SELECT COUNT(*) AS total_autor FROM celebridades;
 SELECT AVG(popularidade) AS media_popularidade_antigos FROM celebridades WHERE data_nascimento < '1900-01-01';
