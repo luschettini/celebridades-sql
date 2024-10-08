@@ -94,3 +94,36 @@ UPDATE celebridades SET falecido = FALSE WHERE nome = 'Michael Jackson';
 UPDATE celebridades SET popularidade = 97 WHERE nome = 'Bob Marley';
 UPDATE celebridades SET nacionalidade = 'Japonesa' WHERE nome = 'Billie Eilish';
 
+DELETE
+
+//Deletar celebridades com popularidade menor que 75
+DELETE FROM celebridades WHERE popularidade < 75;
+
+//Deletar celebridades Japonesas
+DELETE FROM celebridades WHERE nacionalidade = 'Japonesa';
+
+//Deletar celebridades falecidas
+DELETE FROM celebridades WHERE falecido = TRUE;
+
+//Deletar celebridades que nasceram antes de 1980
+DELETE FROM celebridades WHERE data_nascimento < '1980-01-01';
+
+//Deletar celebridades cujo nome começa com 'J'
+DELETE FROM celebridades WHERE nome LIKE 'J%';
+
+//Deletar celebridades que são cantores
+DELETE FROM celebridades WHERE profissao = 'Cantor';
+
+//Deletar celebridades que não são americanas
+DELETE FROM celebridades WHERE nacionalidade != 'Americana';
+
+//Deletar celebridades com popularidade igual a 95
+DELETE FROM celebridades WHERE popularidade = 95;
+
+//Deletar celebridades nascidas em dezembro
+DELETE FROM celebridades WHERE data_nascimento LIKE '____-12-%';
+
+//Deletar celebridades que não são produtores musicais
+DELETE FROM celebridades WHERE profissao != 'Produtor Musical';
+
+
