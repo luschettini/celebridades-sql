@@ -57,15 +57,58 @@ SELECT * FROM celebridades WHERE falecidos = "False";
 
 SELECT * FROM celebridades WHERE data_nascimento < "1900-01-01";
 
-SELECT * FROM celebridades WHERE nacionalidade = "Brasileiro" AND popularidade < 90;
+SELECT * FROM autores WHERE nacionalidade != 'Brasileiro' AND autores WHERE nacionalidade != 'Brasileira';
 
- SELECT * FROM celebridades WHERE popularidade >= 95 AND falecido = "False";
+SELECT * FROM celebridades WHERE popularidade >= 95 AND falecido = "False";
 
 SELECT * FROM celebridades ORDER BY popularidade ASC LIMIT 5;
 
 SELECT * FROM celebridades WHERE falecidos = "True" AND data_nascimento > "1900-01-01";
 
 SELECT * FROM celebridades WHERE popularidade BETWEEN 90 AND 95;
+
+UPDATE celebridades SET popularidade 100 = 8;
+UPDATE celebridades SET nacionalidade = 'Americana' WHERE id = 4;
+UPDATE celebridades SET data_nascimento = '1928-03-06' WHERE nome = 'Gabriel García Márquez';
+UPDATE celebridades SET nacionalidade = 'Americana' WHERE nome = 'J.K. Rowling';
+UPDATE celebridades SET profissao = 'Jornalista' WHERE nome = 'George Orwell';
+UPDATE celebridades SET falecido = 'Não' WHERE nome = 'Clarice Lispector';
+UPDATE celebridades SET popularidade = 99 WHERE nome = 'Machado de Assis';
+UPDATE celebridades SET data_nascimento = "1883-01-25" WHERE nome = 'Virginia Woolf';
+UPDATE celebridades SET nacionalidade = 'Americana' WHERE nome = 'Jane Austen';
+UPDATE celebridades SET popularidade = 93 WHERE nome = 'Margaret Atwood';
+UPDATE celebridades SET falecido = 'Não' WHERE nome = 'Toni Morrison';
+UPDATE celebridades SET nacionalidade = 'Português' WHERE nome = 'Paulo Coelho';
+UPDATE celebridades SET popularidade = 95 WHERE nome = 'Isabel Allende';
+UPDATE celebridades SET data_nascimento = '1978-09-15' WHERE nome = 'Chimamanda Ngozi Adichie';
+UPDATE celebridades SET falecido = 'Não' WHERE nome = 'Hermann Hesse';
+UPDATE celebridades SET profissao = 'Poeta' WHERE nome = 'Franz Kafka';
+UPDATE celebridades SET nacionalidade = 'Argentina' WHERE nome = 'Isabel Allende';
+
+
+DELETE FROM celebridades WHERE nome = 'Margaret Atwood';
+DELETE FROM celebridades WHERE data_nascimento = '1927-03-06';
+DELETE FROM celebridades WHERE popularidade < 15;
+DELETE FROM celebridades WHERE nacionalidade = 'Irlandês'
+DELETE FROM celebridades WHERE id = 19;
+DELETE FROM celebridades WHERE profissao != 'Jornalista';
+DELETE FROM celebridades WHERE nome LIKE 'K%';
+DELETE FROM celebridades WHERE data_nascimento = '1973-10-12';
+DELETE FROM celebridades WHERE YEAR(data_nascimento) < 1850;
+DELETE FROM celebridades WHERE nome = 'Salman Rushdie';
+
+SELECT SUM(popularidade) AS total_popularidade FROM celebridades;
+SELECT AVG(popularidade) AS media_popularidade_falecidos FROM celebridades WHERE falecido = 'Sim';
+SELECT COUNT(*) AS autores_vivos FROM celebridades WHERE falecido = 'Não';
+SELECT nome, MAX(popularidade) AS maior_popularidade FROM celebridades;
+SELECT nome, MIN(popularidade) AS menor_popularidade FROM celebridades;
+SELECT COUNT(*) AS total_autores FROM celebridades;
+SELECT AVG(popularidade) AS media_popularidade FROM celebridades;
+SELECT COUNT(*) AS autores_britanicos FROM celebridades WHERE nacionalidade = 'Britânica';
+SELECT SUM(popularidade) AS total_popularidade_brasileiros FROM celebridades WHERE nacionalidade = 'Brasileiro';
+SELECT nacionalidade, COUNT(*) AS numero_autores FROM celebridades GROUP BY nacionalidade;
+
+
 
 
 

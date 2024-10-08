@@ -4,11 +4,11 @@ CREATE TABLE celebridades(
 
 id SERIAL PRIMARY KEY,
 nome VARCHAR(200),
-data_nascimento INT,
+data_nascimento DATE,
 nacionalidade VARCHAR(100),
 profissao VARCHAR(150),
 popularidade INT,
-óbito/Falecido BOOLEAN
+falecido BOOLEAN
 )
 
 INSERT INTO celebridades (nome, data_nascimento, nacionalidade, profissao, popularidade, falecido)
@@ -50,4 +50,90 @@ VALUES
 ('Tommy Hilfiger', '1951-03-24', 'Americano', 'Estilista', 85, 'false'),
 ('Diane von Fürstenberg', '1946-12-31', 'Belga', 'Estilista', 88, 'false'),
 ('Lily Aldridge', '1985-11-15', 'Americana', 'Modelo', 84, 'false');
+
+SELECT * FROM celebridades WHERE falecido = 'false';
+
+SELECT * FROM celebridades WHERE profissao = 'Estilista' < '1950-01-01';
+
+SELECT * FROM celebridades WHERE profissao = 'Modelo' > 90;
+
+SELECT * FROM celebridades WHERE profissao = 'Modelo' AND nacionalidade = 'Americana' AND 'Americano';
+
+SELECT * FROM celebridades WHERE nome = 'G%';
+
+SELECT * FROM celebridades WHERE nacionalidade = 'Venezuelana';
+
+SELECT AVG(popularidade) AS media_popularidade FROM celebridades WHERE profissao = 'Modelo';
+
+SELECT * FROM celebridades ORDER BY popularidade DESC LIMIT 5;
+
+SELECT * FROM celebridades WHERE profissao = 'Estilista' ORDER BY data_nascimento ASC LIMIT 1;
+
+SELECT * FROM celebridades WHERE data_nascimento = (SELECT MIN(data_nascimento) FROM celebridades);
+
+SELECT * FROM celebridades WHERE data_nascimento = (SELECT MAX(data_nascimento) FROM celebridades);
+
+SELECT * FROM celebridades WHERE profissao = 'Modelo' AND falecido = 'true';
+
+UPDATE celebridades SET popularidade = 99 WHERE nome = 'Gisele Bündchen';
+
+UPDATE celebridades SET nome = 'Diane von Fürstenberg' WHERE profissao = 'Modelo';
+
+UPDATE celebridades SET nacionalidade = 'Americana' WHERE nome = 'Carolina Herrera';
+
+UPDATE celebridades SET falecido = 'false' WHERE nome = 'Vivienne Westwood';
+
+UPDATE celebridades SET profissao = 'Designer de moda' WHERE nome = 'Donatella Versace';
+
+UPDATE celebridades SET profissao = 'Empresária e modelo' WHERE nome = 'Claudia Schiffer';
+
+UPDATE celebridades SET popularidade = 100 WHERE nome = 'Gabrielle Chanel';
+
+UPDATE celebridades SET falecido = 'true' WHERE nome = 'Iris Apfel';
+
+UPDATE celebridades SET nome = 'Kendall Jenner' WHERE profissao = 'Empresária';
+
+UPDATE celebridades SET nacionalidade = 'Italiana' WHERE nome = 'Gigi Hadid';
+
+UPDATE celebridades SET profissao = 'Designer de moda' WHERE nome = 'Naomi Campbell';
+
+UPDATE celebridades SET nacionalidade = 'Americana' WHERE nome = 'Twiggy';
+
+UPDATE celebridades SET falecido = 'true' WHERE nome = 'Kate Moss';
+
+UPDATE celebridades SET popularidade = 94 WHERE nome = 'Virgil Abloh';
+
+UPDATE celebridades SET nacionalidade = 'Tunisiana' WHERE nome = 'Hedi Slimane';
+
+UPDATE celebridades SET falecido = 'true' WHERE nome = 'Ralph Lauren';
+
+UPDATE celebridades SET nacionalidade = 'Jamaicana' WHERE nome = 'Naomi Campbell';
+
+DELETE FROM celebridades WHERE nome = 'Peggy Moffitt';
+
+DELETE FROM celebridades WHERE nacionalidade = 'Belga'; 
+
+DELETE FROM celebridades WHERE profissao popularidade < 83;
+
+DELETE FROM celebridades WHERE nacionalidade = 'Tunisiana'; 
+
+DELETE FROM celebridades WHERE YEAR(data_nascimento) < 1900
+
+DELETE FROM celebridades WHERE nome = 'Lily Aldridge';
+
+DELETE FROM celebridades WHERE nome = 'Zac Posen' AND data_nascimento = '1980-10-24';
+
+DELETE FROM celebridades WHERE nacionalidade = 'Venezuelana'; 
+
+DELETE FROM celebridades WHERE id = 167;
+
+DELETE FROM celebridades WHERE id = 200;
+
+
+
+
+
+
+
+
 
