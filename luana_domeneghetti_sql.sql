@@ -97,6 +97,18 @@ DELETE FROM celebridades WHERE data_nascimento = '1973-10-12';
 DELETE FROM celebridades WHERE YEAR(data_nascimento) < 1850;
 DELETE FROM celebridades WHERE nome = 'Salman Rushdie';
 
+SELECT SUM(popularidade) AS total_popularidade FROM celebridades;
+SELECT AVG(popularidade) AS media_popularidade_falecidos FROM celebridades WHERE falecido = 'Sim';
+SELECT COUNT(*) AS autores_vivos FROM celebridades WHERE falecido = 'Não';
+SELECT nome, MAX(popularidade) AS maior_popularidade FROM celebridades;
+SELECT nome, MIN(popularidade) AS menor_popularidade FROM celebridades;
+SELECT COUNT(*) AS total_autores FROM celebridades;
+SELECT AVG(popularidade) AS media_popularidade FROM celebridades;
+SELECT COUNT(*) AS autores_britanicos FROM celebridades WHERE nacionalidade = 'Britânica';
+SELECT SUM(popularidade) AS total_popularidade_brasileiros FROM celebridades WHERE nacionalidade = 'Brasileiro';
+SELECT nacionalidade, COUNT(*) AS numero_autores FROM celebridades GROUP BY nacionalidade;
+
+
 
 
 
