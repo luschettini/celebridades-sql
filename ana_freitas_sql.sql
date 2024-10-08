@@ -114,6 +114,21 @@ UPDATE celebridades SET popularidade = 100 WHERE profissao LIKE 'B%';
 UPDATE celebridades SET nome = 'André Mergen Taffarel' WHERE profissao = 'Jogador de futebol' AND data_nascimento = '1966-05-08';
 UPDATE celebridades SET nacionalidade = 'Alemão' WHERE nome LIKE 'Michael%';
 
+DELETE FROM celebridades WHERE nome = 'Neymar Jr.';
+DELETE FROM celebridades WHERE popularidade = (SELECT MIN(popularidade) FROM celebridades);
+DELETE FROM celebridades WHERE popularidade  BETWEEN 60 and 70;
+DELETE FROM celebridades WHERE nome LIKE 'F%'; AND nacionalidade = 'Argentino';
+DELETE FROM celebridades WHERE data_nascimento = '1983-10-03' AND popularidade < 80;
+DELETE FROM celebridades WHERE profissao = 'Tenista';
+DELETE FROM celebridades WHERE nome LIKE 'Y%';
+DELETE FROM celebridades WHERE id = 99;
+DELETE FROM celebridades WHERE data_nascimento = '1940-10-23';
+DELETE FROM celebridades WHERE nome = 'Wayne Gretzky';
+
+
+
+
+
 
 
 
