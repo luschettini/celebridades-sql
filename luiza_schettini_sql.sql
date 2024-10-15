@@ -75,7 +75,7 @@ SELECT * FROM celebridades WHERE profissao = 'Modelo' AND falecido = 'true';
 
 UPDATE celebridades SET popularidade = 99 WHERE nome = 'Gisele Bundchen';
 
-UPDATE celebridades SET nome = 'Diane von Furstenberg' WHERE profissao = 'Modelo';
+UPDATE celebridades SET nome = 'Diane von Furstenberg'  WHERE profissao 'Estilista' AND nome LIKE 'Diane%';
 
 UPDATE celebridades SET nacionalidade = 'Americana' WHERE nome = 'Carolina Herrera';
 
@@ -89,7 +89,7 @@ UPDATE celebridades SET popularidade = 100 WHERE nome = 'Gabrielle Chanel';
 
 UPDATE celebridades SET falecido = 'true' WHERE nome = 'Iris Apfel';
 
-UPDATE celebridades SET nome = 'Kendall Jenner' WHERE profissao = 'Empresaria';
+UPDATE celebridades SET profissao = 'Empresária e modelo' WHERE nome = 'Kendall Jenner';
 
 UPDATE celebridades SET nacionalidade = 'Italiana' WHERE nome = 'Gigi Hadid';
 
@@ -103,19 +103,17 @@ UPDATE celebridades SET popularidade = 94 WHERE nome = 'Virgil Abloh';
 
 UPDATE celebridades SET nacionalidade = 'Tunisiana' WHERE nome = 'Hedi Slimane';
 
-UPDATE celebridades SET falecido = 'true' WHERE nome = 'Ralph Lauren';
-
+ UPDATE celebridades SET falecido = 'true' WHERE nome = 'Ralph Lauren';
+ 
 UPDATE celebridades SET nacionalidade = 'Jamaicana' WHERE nome = 'Naomi Campbell';
 
 DELETE FROM celebridades WHERE nome = 'Peggy Moffitt';
 
 DELETE FROM celebridades WHERE nacionalidade = 'Belga'; 
 
-DELETE FROM celebridades WHERE profissao popularidade < 83;
+DELETE FROM celebridades WHERE profissao = 'Modelo' AND popularidade < 83;
 
-DELETE FROM celebridades WHERE nacionalidade = 'Tunisiana'; 
-
-DELETE FROM celebridades WHERE YEAR(data_nascimento) < 1900
+DELETE FROM celebridades WHERE YEAR(data_nascimento) < 1900;
 
 DELETE FROM celebridades WHERE nome = 'Lily Aldridge';
 
@@ -127,27 +125,22 @@ DELETE FROM celebridades WHERE id = 167;
 
 DELETE FROM celebridades WHERE id = 200;
 
-
 SELECT AVG(popularidade) AS media_popularidade FROM celebridades WHERE profissao = 'Modelo';
 
 SELECT AVG(popularidade) AS media_popularidade FROM celebridades WHERE profissao = 'Estilista';
 
 SELECT AVG(popularidade) AS media_popularidade_americana FROM celebridades WHERE nacionalidade = 'Americana';
 
-SELECT SUM(popularidade) AS total_popularidade_falecidos FROM celebridades WHERE falecido = 'FALSE';
+SELECT SUM(popularidade) AS total_popularidade_falecidos FROM celebridades WHERE falecido = 'false';
 
 SELECT SUM(popularidade) AS total_popularidade_britanico FROM celebridades WHERE nacionalidade = 'Britanico';
 
-SELECT COUNT(*) AS total_estilista FROM celebridades;
+SELECT COUNT(*) AS total_estilista FROM celebridades WHERE profissao = 'Estilista';
 
-SELECT COUNT(*) AS total_modelos FROM celebridades;
+SELECT COUNT(*) AS total_modelos FROM celebridades WHERE profissao = 'Modelo';
 
-SELECT nome, popularidade FROM celebridades ORDER BY popularidade DESC;
+SELECT nome, popularidade FROM celebridades ORDER BY popularidade DESC LIMIT 10;
 
 SELECT COUNT(*) AS total_autor_popularidade_90 FROM celebridades WHERE popularidade <= 90;
 
-SELECT SUM(popularidade) AS total_popularidade FROM celebridades;
-
-
-
-
+SELECT SUM(popularidade) AS total_popularidade_modelos FROM celebridades WHERE profissao = 'Modelo';
