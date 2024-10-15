@@ -1,11 +1,11 @@
-CREATE DATABASE celebridades_teste4;
+CREATE DATABASE celebridades_db;
 
-CREATE TABLE celebridades_teste4(
+CREATE TABLE celebridades(
 id SERIAL PRIMARY KEY,
 nome VARCHAR(200),
 data_nascimento DATE,
 nacionalidade VARCHAR(100),
-profissão VARCHAR(150),
+profissao VARCHAR(150),
 popularidade INT,
 falecido BOOLEAN
 );
@@ -17,7 +17,6 @@ INSERT INTO celebridades_ (nome, data_nascimento, nacionalidade, profissao, popu
 ('Alfredo Volpi', '1896-04-14', 'Brasileiro', 'Pintor', 87, 'TRUE'),
 ('Ismael Nery', '1900-10-09', 'Brasileiro', 'Pintor', 85, 'TRUE'),
 ('Lasar Segall', '1891-07-21', 'Brasileiro', 'Pintor', 86, 'TRUE'),
-('Tarsila do Amaral', '1886-09-01', 'Brasileira', 'Pintora', 99, 'TRUE'),
 ('Helio Oiticica', '1937-07-26', 'Brasileiro', 'Pintor', 83, 'TRUE'),
 ('Victor Meirelles', '1832-08-18', 'Brasileiro', 'Pintor', 82, 'TRUE'),
 ('Benedito Calixto', '1853-10-14', 'Brasileiro', 'Pintor', 78, 'TRUE'),
@@ -48,6 +47,7 @@ INSERT INTO celebridades_ (nome, data_nascimento, nacionalidade, profissao, popu
 ('Jean Michel Basquiat', '1960-12-22', 'Americano', 'Pintor', 60, 'TRUE'),
 ('Amedeo Modigliani', '1884-07-12', 'Italiano', 'Pintor', 79, 'TRUE'),
 ('Artemisia Gentileschi', '1593-07-08', 'Italiana', 'Pintora', 93, 'TRUE');
+('Tarsila do Amaral', '1886-09-01', 'Brasileira', 'Pintora', 99, 'TRUE'),
 
 
 --!SELECT--

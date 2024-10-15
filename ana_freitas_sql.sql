@@ -128,13 +128,13 @@ DELETE FROM celebridades WHERE nome = 'Wayne Gretzky';
 SELECT nome, popularidade FROM celebridades WHERE nacionalidade = 'Brasileiro' ORDER BY popularidade DESC; /*BRASILEIROS ORDENADOS POR POPULARIDADE DESC*/
 SELECT nome, data_nascimento FROM celebridades WHERE EXTRACT(MONTH FROM data_nascimento) = 10; /*CELEBRIDADES QUE NASCERAM EM OUTUBRO*/
 SELECT AVG(popularidade) AS media_popularidade_nao_falecidos FROM celebridades WHERE falecido = FALSE; /*MEDIA POPULARIDADE DE CELEBRIDADES QUE NAO FORAM FALECIDAS*/
-SELECT profissao, COUNT(*) AS total FROM celebridades GROUP BY profissao ORDER BY total DESC LIMIT 5; /*TOP 5 PROFISSÕES MAIS COMUNS*/
-SELECT nome, SUM(popularidade) AS soma_popularidade FROM celebridades GROUP BY nome; /*SOMA POPULARIDADE POR NOME*/
+SELECT COUNT(*) AS total FROM celebridades GROUP BY profissao ORDER BY total DESC LIMIT 5; /*TOP 5 PROFISSÕES MAIS COMUNS*/
+SELECT SUM(popularidade) AS soma_popularidade FROM celebridades GROUP BY nome; /*SOMA POPULARIDADE POR NOME*/
 SELECT COUNT(*) AS total_popularidade_acima_90 FROM celebridades WHERE popularidade > 90 AND data_nascimento > '1980-01-01'; /*TOTAL DE CELEBRIDADES COM POPULARIDADE ACIMA DE 90 E NASCIMENTO APÓS 1980*/
 SELECT COUNT(*) AS total_nomes_com_a FROM celebridades WHERE nome LIKE '%a%'; /*TOTAL DE CELEBRIDADES COM NOME COM A*/
 SELECT SUM(popularidade) AS soma_popularidade_atleta FROM celebridades WHERE profissao LIKE '%Jogador%'; /* SOMA POPULARIDADE DE CELEBRIDADES COM PROFISSÕES QUE CONTEM JOGADOR*/
 SELECT FLOOR(EXTRACT(YEAR FROM data_nascimento) / 10) * 10 AS decada, SUM(popularidade) AS soma_popularidade FROM celebridades GROUP BY decada; /* SOMA POPULARIDADE POR DECADA*/
-SELECT nacionalidade, COUNT(*) AS total_mortos FROM celebridades WHERE falecido = TRUE GROUP BY nacionalidade; /* TOTAL DE MORTOS POR NACIONALIDADE*/
+SELECT COUNT(*) AS total_mortos FROM celebridades WHERE falecido = TRUE GROUP BY nacionalidade; /* TOTAL DE MORTOS POR NACIONALIDADE*/
 
 
 
