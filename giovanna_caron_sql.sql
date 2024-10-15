@@ -1,6 +1,6 @@
-CREATE DATABASE celebridades_db;
+CREATE DATABASE celebridades_db_;
 
-CREATE TABLE celebridades(
+CREATE TABLE celebridades_(
 id SERIAL PRIMARY KEY,
 nome VARCHAR(200),
 data_nascimento DATE,
@@ -10,7 +10,7 @@ popularidade INT,
 falecido BOOLEAN
 );
 
-INSERT INTO celebridades (nome, data_nascimento, nacionalidade, profissao, popularidade, falecido)
+INSERT INTO celebridades_ (nome, data_nascimento, nacionalidade, profissao, popularidade, falecido)
 VALUES
 ('Fernanda Montenegro', '1929-10-16', 'Brasileira', 'Atriz', 90, FALSE ),
 ('Paulo Gustavo', '1978-10-30', 'Brasileiro', 'Ator', 90, TRUE ),

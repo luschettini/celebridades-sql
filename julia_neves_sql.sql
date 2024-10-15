@@ -10,7 +10,7 @@ popularidade INT,
 falecido BOOLEAN
 );
 
-INSERT INTO celebridades (nome, data_nascimento, nacionalidade, profissão, popularidade, falecido) VALUES
+INSERT INTO celebridades_ (nome, data_nascimento, nacionalidade, profissao, popularidade, falecido) VALUES
 ('Cândido Portinari', '1903-12-29', 'Brasileiro', 'Pintor', 92, 'TRUE'),
 ('Anita Malfatti', '1889-12-02', 'Brasileira', 'Pintora', 88, 'TRUE'),
 ('Di Cavalcanti', '1897-09-06', 'Brasileiro', 'Pintor', 90, 'TRUE'),
