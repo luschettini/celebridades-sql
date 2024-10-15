@@ -94,7 +94,7 @@ INSERT INTO celebridades (nome, data_nascimento, nacionalidade, profissao, popul
 ('Tatiana Weston-Webb', '1996-05-09', 'Brasileira', 'Surfista', 80, FALSE),
 ('Hugo Calderano', '1996-06-22', 'Brasileiro', 'Mesa-tenista', 88, FALSE),
 ('Bruna Takahashi', '2000-07-19', 'Brasilira', 'Mesa-tenista', 88, FALSE),
-('Marcus D´Almeida', '1998-01-30', 'Brasileiro', 'Arqueiro', 87, FALSE);
+('Marcus D Almeida', '1998-01-30', 'Brasileiro', 'Arqueiro', 87, FALSE);
 
 UPDATE celebridades SET popularidade = popularidade + 10 WHERE popularidade < 80;
 UPDATE celebridades SET popularidade = 100 WHERE nome LIKE 'Neymar%';
@@ -124,6 +124,28 @@ DELETE FROM celebridades WHERE nome LIKE 'Y%';
 DELETE FROM celebridades WHERE id = 99;
 DELETE FROM celebridades WHERE data_nascimento = '1940-10-23';
 DELETE FROM celebridades WHERE nome = 'Wayne Gretzky';
+
+SELECT nome, popularidade FROM celebridades WHERE nacionalidade = 'Brasileiro' ORDER BY popularidade DESC; /*BRASILEIROS ORDENADOS POR POPULARIDADE DESC*/
+SELECT nome, data_nascimento FROM celebridades WHERE EXTRACT(MONTH FROM data_nascimento) = 10; /*CELEBRIDADES QUE NASCERAM EM OUTUBRO*/
+SELECT AVG(popularidade) AS media_popularidade_nao_falecidos FROM celebridades WHERE falecido = FALSE; /*MEDIA POPULARIDADE DE CELEBRIDADES QUE NAO FORAM FALECIDAS*/
+SELECT profissao, COUNT(*) AS total FROM celebridades GROUP BY profissao ORDER BY total DESC LIMIT 5; /*TOP 5 PROFISSÕES MAIS COMUNS*/
+SELECT nome, SUM(popularidade) AS soma_popularidade FROM celebridades GROUP BY nome; /*SOMA POPULARIDADE POR NOME*/
+SELECT COUNT(*) AS total_popularidade_acima_90 FROM celebridades WHERE popularidade > 90 AND data_nascimento > '1980-01-01'; /*TOTAL DE CELEBRIDADES COM POPULARIDADE ACIMA DE 90 E NASCIMENTO APÓS 1980*/
+SELECT COUNT(*) AS total_nomes_com_a FROM celebridades WHERE nome LIKE '%a%'; /*TOTAL DE CELEBRIDADES COM NOME COM A*/
+SELECT SUM(popularidade) AS soma_popularidade_atleta FROM celebridades WHERE profissao LIKE '%Jogador%'; /* SOMA POPULARIDADE DE CELEBRIDADES COM PROFISSÕES QUE CONTEM JOGADOR*/
+SELECT FLOOR(EXTRACT(YEAR FROM data_nascimento) / 10) * 10 AS decada, SUM(popularidade) AS soma_popularidade FROM celebridades GROUP BY decada; /* SOMA POPULARIDADE POR DECADA*/
+SELECT nacionalidade, COUNT(*) AS total_mortos FROM celebridades WHERE falecido = TRUE GROUP BY nacionalidade; /* TOTAL DE MORTOS POR NACIONALIDADE*/
+
+
+
+
+
+
+
+
+
+
+
 
 
 
